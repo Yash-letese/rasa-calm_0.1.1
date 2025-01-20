@@ -1,0 +1,14 @@
+recipe: default.v1
+language: en
+pipeline:
+- name: SingleStepLLMCommandGenerator
+  llm:
+    model_group: openai-gpt-4
+
+policies:
+- name: RulePolicy
+- name: FlowPolicy
+- name: IntentlessPolicy
+- name: EnterpriseSearchPolicy
+
+assistant_id: 20250115-142314-humble-titanium

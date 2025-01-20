@@ -1,0 +1,47 @@
+# version: "3.1"
+
+# actions:
+#   - account_opening
+
+# slots:
+#   add_bank_name:
+#     type: text
+#     mappings:
+#       - type: from_llm
+#   add_branch_name:
+#     type: text
+#     mappings:
+#       - type: from_llm
+#   add_bank_confirmation:
+#     type: bool
+#     mappings:
+#       - type: from_llm
+
+# responses:
+#   utter_ask_add_bank_account_name:
+#     - text: "What's the name of the bank account you want to add?"
+#   utter_bank_account_added:
+#     - text: "Bank account added successfully."
+#   utter_bank_account_already_exists:
+#     - text: "There's already a bank account with that name in your list."
+#   utter_add_bank_error:
+#     - text: "Something went wrong, please try again."
+#   utter_add_bank_cancelled:
+#     - text: "Okay, I am cancelling this adding of a bank account."
+#   utter_ask_add_bank_confirmation:
+#     - text: Do you want to add {add_bank_name}({add_branch_name}) to your new bank account?
+#       buttons:
+#         - payload: "/SetSlots(add_bank_confirmation=true)"
+#           title: Yes
+#         - payload: "/SetSlots(add_bank_confirmation=false)"
+#           title: No, cancel
+
+# forms:
+#   bank_account_opening_form:
+#     ignored_intents:
+#       - chitchat
+#     required_slots:
+#       - add_bank_name
+#       - add_branch_name
+#       - add_bank_confirmation
+
