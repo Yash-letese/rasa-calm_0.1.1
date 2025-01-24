@@ -54,5 +54,9 @@ model_groups:
     models:
       - provider: openai
         model: openai/gpt-4
-        request_timeout: 7
+        # request_timeout: 7
         max_tokens: 256
+  - id: openai_embeddings
+    models:
+      - provider: openai
+        model: text-embedding-ada-002

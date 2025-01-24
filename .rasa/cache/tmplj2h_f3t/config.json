@@ -1,0 +1,27 @@
+{
+  "priority": 6,
+  "vector_store": {
+    "type": "faiss",
+    "source": "./docs",
+    "threshold": 0.0
+  },
+  "llm": {
+    "id": "openai-gpt-4",
+    "models": [
+      {
+        "provider": "openai",
+        "model": "openai/gpt-4",
+        "max_tokens": 256
+      }
+    ]
+  },
+  "embeddings": {
+    "id": "openai_embeddings",
+    "models": [
+      {
+        "provider": "openai",
+        "model": "text-embedding-ada-002"
+      }
+    ]
+  }
+}

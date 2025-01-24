@@ -4,11 +4,18 @@ pipeline:
 - name: SingleStepLLMCommandGenerator
   llm:
     model_group: openai-gpt-4
+  flow_retrieval:
+    embeddings:
+      model_group: openai_embeddings
 
 policies:
 - name: RulePolicy
 - name: FlowPolicy
 - name: IntentlessPolicy
 - name: EnterpriseSearchPolicy
+  llm:
+    model_group: openai-gpt-4
+  embeddings:
+    model_group: openai_embeddings
 
 assistant_id: 20250115-142314-humble-titanium

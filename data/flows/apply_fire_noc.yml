@@ -1,0 +1,29 @@
+flows:
+  apply_fire_noc:
+    description: this flow lets user how to apply for fire NOC
+    name: apply for fire NOC
+    steps:
+      - collect: "username"
+        description: "name of user"
+      - collect: "user_contact_number"
+        description: "contact number of user"
+      - collect: "todo_of_user"
+        description: "task to be done by user"
+      - collect: "redirect_to_vrm"
+        ask_before_filling: true
+        next:
+          - if: "slots.redirect_to_vrm is not true"
+            then:
+              - action: utter_greet_assistance
+                next: END
+          - else: connect_to_vrm
+      - id: connect_to_vrm
+        action: connect_to_vrm
+        next:
+          - if: "slots.return_value = 'success'"
+            then:
+              - action: utter_connected_to_vrm
+                next: END
+          - else:
+              - action: utter_try_again
+                next: END
