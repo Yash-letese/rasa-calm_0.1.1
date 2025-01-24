@@ -1,0 +1,24 @@
+version: "3.1"
+
+actions:
+  - connect_to_vrm
+
+slots:
+  username:
+    type: text
+    mappings:
+      - type: from_llm
+  user_contact_number:
+    type: text
+    mappings:
+      - type: from_llm
+  todo_of_user:
+    type: text
+    mappings:
+      - type: from_llm
+
+responses:
+  utter_greet_assistance:
+    - text: "how can I assist you further?"
+  utter_connected_to_vrm:
+    - text: "You have been connected to VRM"
